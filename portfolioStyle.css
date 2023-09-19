@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section:nth-child(even) {
+    background-color: #fbfbf8;
+}
+
+section:nth-child(odd) {
+    background-color: #f2ecff;
+}
+
+/* Nav Bar */
+nav {
+    height: 100px;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+ul.navList {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    margin: 0 12px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 16px;
+    color: black;
+    font-weight: 700;
+    position: relative;
+    transition: all 350ms ease-in-out;
+}
+
+i:hover {
+    opacity: 0.7;
+}
+
+a.contactTab {
+    background-color: #010536;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: #FBFBF8;
+    transition: all 250ms ease-in-out;
+}
+
+a.contactTab:hover {
+    background-color: #010c80;
+}
+
+a.navLink:after {
+    position: absolute;
+    height: 3px;
+    width: 0;
+    content: "";
+    background-color: black;
+    right: 0;
+    bottom: -3px;
+    transition: all 350ms ease-in-out;
+}
+
+a.navLink:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* About Me Section */
+
+#aboutMe {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div.aboutMeSection {
+    display: flex;
+    flex: 1;
+}
+
+div.aboutMeRow {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.aboutMeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+figure.myPictureContainer {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+    margin-bottom: 20px;
+    animation: pictureAnimation 700ms 350ms backwards;
+}
+
+@keyframes pictureAnimation {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+img.myPicture {
+    width: 100%;
+    height: 100%;
+}
+
+h1.aboutMeHeader {
+    font-size: 28px;
+    margin-bottom: 12px;
+    animation: aboutTransition 600ms 500ms backwards;
+}
+
+p.aboutMeInfo {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    animation: aboutTransition 600ms 600ms backwards;
+}
+
+.aboutBolded {
+    color: #010fa0;
+}
+
+.iconLink {
+    font-size: 20px;
+    padding: 0 16px;
+}
+
+.aboutMeIcons {
+    margin-bottom: 20px;
+    animation: aboutTransition 600ms 700ms backwards;
+}
+
+figure.aboutDesignImage {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+img.softEnggImg {
+    height: 100%;
+    width: 100%;
+    animation: aboutImgTransition 1200ms 800ms backwards;
+}
+
+@keyframes aboutTransition {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aboutImgTransition {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Skills Section */
+
+h1.skillsHeader {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.skillsBolded {
+    color: #010fa0;
+}
+
+div.skillsContainer {
+    padding: 50px 0;
+}
+
+div.skillsRow {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.technicalSkills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+div.skill {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+figure.technicalSkillFig {
+    padding: 25px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.technicalSkillImg {
+    width: 100%;
+    height: 100%;
+    max-width: 125px;
+    max-height: 125px;
+    margin-bottom: 10px;
+    mix-blend-mode: multiply;
+    transition: all 350ms ease-in-out;
+}
+
+div.skill:hover img.technicalSkillImg {
+    filter: brightness(85%);
+    opacity: 0.90;
+    transform: scale(1.1);
+}
+
+span.skillName {
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    background: none;
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: all 250ms ease-in-out;
+}
+
+div.skill:hover span.skillName {
+    transform: scale(1);
+}
+
+/* Projects Section */
+
+div.projectsRow {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1.projectsHeader {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.projectsBolded {
+    color: #010fa0;
+}
+
+li.project {
+    margin-bottom: 150px;
+}
+
+li.project:last-child {
+    margin-bottom: 50px;
+}
+
+img.projectImg {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    transition: all 350ms ease-in-out;
+}
+
+div.projectDiv {
+    display: flex;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+div.projectDiv:before {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #010536;
+    content: "";
+    position: absolute;
+    opacity: 0;
+    transition: all 350ms ease-in-out;
+    z-index: 2;
+}
+
+li.project:hover div.projectDiv:before {
+    opacity: 0.65;
+}
+
+li.project:hover img.projectImg {
+    transform: scale(1.05);
+    filter: blur(1px);
+}
+
+li.project:hover div.projectInfo {
+    opacity: 1;
+}
+
+div.projectInfo {
+    top: 50%;
+    left: 60px;
+    position: absolute;
+    max-width: 550px;
+    transform: translateY(-50%);
+    z-index: 3;
+    opacity: 0;
+    transition: all 350ms ease-in-out;
+}
+
+h2.projectTitle {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+p.projectDescription {
+    margin: 16px 0;
+}
+
+a.projectLink {
+    font-size: 20px;
+    margin-right: none;
+}
+
+h2.projectTitle,
+h3.projectSkills,
+p.projectDescription,
+a.projectLink {
+    font-family: 'Ysabeau Office', sans-serif;
+    text-align: left;
+    color: #f2ecff;
+}
+
+/* Footer */
+
+div.footerRow {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    background-color: #323265;
+}
+
+figure.footer {
+    margin-bottom: 20px;
+}
+
+img.footerLogo {
+    height: 70px;
+    width: 70px;
+}
+
+div.connectLinks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+a.connectLink {
+    color: #fbfbf8;
+}
+
+a.connectLink:after {
+    position: absolute;
+    height: 3px;
+    width: 0;
+    content: "";
+    background-color: #fbfbf8;
+    right: 0;
+    bottom: -3px;
+    transition: all 350ms ease-in-out;
+}
+
+a.connectLink:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+div.copyright {
+    color: #fbfbf8;
+}
+
+/* Responsive Design Elements */
+
+@media (max-width: 768px) {
+    nav {
+        height: 68px !important;
+    }
+
+    h1 {
+        font-size: 24px !important;
+    }
+
+    h2 {
+        font-size: 35px !important;
+    }
+
+    h3 {
+        font-size: 20px !important;
+    }
+
+    p.aboutMeInfo {
+        font-size: 14px !important;
+    }
+
+    div.skill {
+        width: calc(100% / 4) !important;
+    }
+
+    p.projectInfo {
+        left: 30px !important;
+        padding-right: 30px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    li.navListLink:not(:last-child) {
+        display: none;
+    }
+
+    h2 {
+        font-size: 24px !important;
+        line-height: 1 !important;
+    }
+
+    h3 {
+        font-size: 20px !important;
+        margin: 5px 0 !important;
+    }
+
+    p.projectDescription {
+        display: none;
+    }
+}
